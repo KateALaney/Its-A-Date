@@ -1,26 +1,69 @@
-// Firebase configuration.
-var firebaseConfig = {
-    apiKey: "AIzaSyAB73QFYhzi3p2RBcJR3t0RjtXQ0c1i7BI",
-    authDomain: "it-s-a-date-9b312.firebaseapp.com",
-    databaseURL: "https://it-s-a-date-9b312.firebaseio.com",
-    projectId: "it-s-a-date-9b312",
-    storageBucket: "",
-    messagingSenderId: "1085675726711",
-    appId: "1:1085675726711:web:1dead53ca6901487ee6372"
-  };
+$(document).ready(function () {
 
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-
-// Determine global variables/arrays.
-
-let zipCode = ""
-let date = ""
-
-// Set document.on function to 
-
+// Create an on-click function to start the AJAX call.
+$(document).on("click", "#zip-code-btn", function() {
+    title = "";
+    var queryURL = "https://api.seatgeek.com/2/events?client_id=MTQyMDg2OTJ8MTU2OTA2Njc3MC40NQ&geoip=" + zipCode + "&range=15mi";
+    //var queryURL = "https://www.eventbrite.com/oauth/authorize?response_type=53VUUZPDIPBV6GWMFV4V&client_id=BJR7JJYNA5LD5T6GGG"
+    
 // AJAX call.
+    $.ajax({
+      url: queryURL,
+      method: "GET",
+      xhrFields: {
+        withCredentials: true}
+    }).then(function(response) { // Create a function to pull the responses to the AJAX call.
+    console.log(response);
+
+    for(var i = 0; i < response.events.length; i++){
+      console.log(response.events[i]);
+      
+      var titleResults = response.events[i].title;
+      var dateResults = response.events[i].datetime_local;
+      var typeResults = response.events[i].type;
+      var venueResults = response.events[i].venue.name;
+      var priceResults = response.events[i].stats.average_price;
+      var urlResults = response.events[i].url;
+      console.log(dateResults);
+      console.log(typeResults);
+      console.log(venueResults);
+      console.log(priceResults);
+      console.log(urlResults);
+
+    // Create a series of divs to hold and display the results in the HTML.
+    var titleDiv = $("<div>");
+    var titleButton = $("<button>").text(titleResults);
+    titleButton.attr("class", "titlebtn");
+    titleDiv.append(titleButton);
+    $("#event-box").append(titleDiv);
+
+    $(".titlebtn").on("click", function() {
+      var dateDiv = $("<div>");
+      var dateP = $("<p>").text("Date: " + dateResults);
+      dateDiv.append(dateP);
+      $("#event-detail").append(dateDiv)
+    });
+  }
+    
+    
+  
+  });
+  
+});
+
+// Create a function to store user input data.
+$("#zip-code-btn").on("click", function(event) {
+  event.preventDefault();
+  zipCode = $("#zip-code-input").val().trim();
+  dateInput = $("#date-input").val().trim();
+  console.log(zipCode);
+  console.log(dateInput);
+})
 
 
 
-// Gather user input.
+
+
+/* Create a variable to store the date input.
+var date = moment(val().dateInput, )*/
+});

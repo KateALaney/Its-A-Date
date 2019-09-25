@@ -1,84 +1,86 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="no-js">
-<!--<![endif]-->
+<html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Document</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>It's A Date!</title>
 </head>
 
 <body>
-    
-    <div class="jumbotron">
-        <h1 class="display-4">It's A Date!</h1>
-        <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to
-            featured content or information.</p>
-        <hr class="my-4">
-        <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-        <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-    </div>
-    <div class="container">
-        <div class="form-row">
-            <div class="col-sm">
-                <input type="number" class="form-control" placeholder="Zip Code">
-            </div>
-            <div class="col-sm">
-                <input type="date" class="form-control" placeholder="Date">
 
+    <div class="container">
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h1 class="display-4">It's A Date!</h1>
+                <p class="lead">Tagline goes here. . . .</p>
             </div>
         </div>
     </div>
-
     <div class="container">
-        <div class="form-row">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" id="zip-code-input" placeholder="Zip Code"
+                        aria-label="Zip Code" aria-describedby="button-addon2">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" type="button" id="zip-code-btn">Submit</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" id="date-input" placeholder="YYYY-MM-DD" aria-label="Date"
+                        aria-describedby="button-addon2"> <!-- Need to change the input type.-->
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" type="button" id="zip-code-btn">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
             <div class="col-md-6">
                 <div class="card">
-                    <div class="card-body">
-                         <ul class="list-group">
-                            <li class="list-group-item"></li>
-                            <li class="list-group-item"></li>
-                            <li class="list-group-item"></li>
-                            <li class="list-group-item"></li>
-                            <li class="list-group-item"></li>
-                          </ul>
+                    <div class="card-body" id="event-box">
+                        <h2>Events</h2>
                     </div>
-                  </div>
+                </div>
             </div>
             <div class="col-md-6">
                 <div class="card">
-                    <div class="card-body">
-                        <ul class="list-group">
-                            <li class="list-group-item"></li>
-                            <li class="list-group-item"></li>
-                            <li class="list-group-item"></li>
-                            <li class="list-group-item"></li>
-                            <li class="list-group-item"></li>
-                          </ul>
-                          </div>
+                    <div class="card-body" id="restaurant-box">
+                        Placeholder text for restaurants.
                     </div>
-                  </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body" id="event-detail">
+                        <Placeholder text for event details.>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body" id="restaurant-detail">
+                        Placeholder text for restaurant details.
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
     </script>
-    <script src="/assets/javascript/project.js" async defer></script>
-    <link rel = "stylesheet" href = "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity = "sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-        crossorigin = "anonymous" >
-            <link rel = "stylesheet" href = "assets/css/style.css" >
-            </body> 
-            </html>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="assets/javascript/project.js"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+</body>
+
+</html>

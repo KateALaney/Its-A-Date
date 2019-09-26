@@ -35,7 +35,7 @@ $(document).ready(function () {
         var typeP = $("<p>").text("Type: " + typeResults);
         var venueP = $("<p>").text("Venue: " + venueResults);
         var priceP = $("<p>").text("Average Cost: $" + priceResults);
-        var urlP = $("<a id='link' href>").text(urlResults);
+        var urlP = $("<a id='link' href='" + urlResults + "'>" + urlResults + "</a>")
         titleP.attr("class", "resultsP");
         dateP.attr("class", "resultsP");
         typeP.attr("class", "resultsP");
@@ -56,7 +56,7 @@ $(document).ready(function () {
 
   });
 
-  // Create a function to store user input data for events.
+  // Create a function to store user input data for.
   $("#zip-code-btn").on("click", function (event) {
     event.preventDefault();
     zipCode = $("#zip-code-input").val().trim();

@@ -3,15 +3,14 @@ $(document).ready(function () {
 // Create an on-click function to start the AJAX call.
 $(document).on("click", "#zip-code-btn", function() {
     title = "";
-    var queryURL = "https://api.seatgeek.com/2/events?client_id=MTQyMDg2OTJ8MTU2OTA2Njc3MC40NQ&geoip=" + zipCode + "&range=15mi";
-    //var queryURL = "https://www.eventbrite.com/oauth/authorize?response_type=53VUUZPDIPBV6GWMFV4V&client_id=BJR7JJYNA5LD5T6GGG"
+    //var queryURL = "https://api.seatgeek.com/2/events?client_id=MTQyMDg2OTJ8MTU2OTA2Njc3MC40NQ&geoip=" + zipCode + "&range=15mi";
+    var queryURL = "https://api.openbrewerydb.org/breweries?by_city=" + zipCode + "&by_state=" + dateInput;
     
-// AJAX call.
+    
+// AJAX call for SeatGeek.
     $.ajax({
       url: queryURL,
       method: "GET",
-      xhrFields: {
-        withCredentials: true}
     }).then(function(response) { // Create a function to pull the responses to the AJAX call.
     console.log(response);
 

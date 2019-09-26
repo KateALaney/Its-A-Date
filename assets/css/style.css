@@ -1,5 +1,9 @@
 body{
-    background-image: url(../background.jpg);
-    background-image:  
-    
+    background-image: url(../background.jpg);    
 }
+
+p {
+    font-weight: bold;
+}
+
+

@@ -3,7 +3,6 @@ $(document).ready(function () {
   // Create an on-click function to start the AJAX call.
   $(document).on("click", "#zip-code-btn", function () {
     var queryURL = "https://api.seatgeek.com/2/events?client_id=MTQyMDg2OTJ8MTU2OTA2Njc3MC40NQ&geoip=" + zipCode + "&range=15mi";
-    //      var queryURL = "https://api.openbrewerydb.org/breweries?by_city=" + zipCode + "&by_state=" + dateInput;
 
     // AJAX call for SeatGeek.
     $.ajax({
@@ -57,12 +56,14 @@ $(document).ready(function () {
 
   });
 
-  // Create a function to store user input data.
+  // Create a function to store user input data for events.
   $("#zip-code-btn").on("click", function (event) {
     event.preventDefault();
     zipCode = $("#zip-code-input").val().trim();
     console.log(zipCode);
   });  
+
+  // Create a function to store user input data for breweries.
 
   $(document).on("click", /*"#",*/ function () {
     var queryURL = "https://api.openbrewerydb.org/breweries?by_city=" + zipCode + "&by_state=" + dateInput;

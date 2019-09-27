@@ -5,6 +5,7 @@ body{
     background-repeat: no-repeat;
     font-family: 'Quicksand', sans-serif;
     background-attachment: fixed;
+    background-color: black;
 }
 p {
     font-weight: bold;
@@ -29,4 +30,22 @@ p {
 .top-buffer {
     margin-top: 30px;
     margin-bottom: 0px;
+}
+
+.card-header {
+    background-color: black;
+    color: #FCC830;
+}
+
+.card {
+    border: 1px solid black;
+}
+
+.flex-wrap {
+    background-color: black;
+    color: white;
+}
+
+.card-body {
+    background-color: #FCC830;
 }

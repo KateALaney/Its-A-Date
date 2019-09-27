@@ -29,27 +29,32 @@ $(document).ready(function () {
         console.log(urlResults);
 
         // Create a series of divs to hold and display the results in the HTML.
-        var resultsDiv = $("<div class='row flex-wrap bg-light my-3 mx-3'>");
-        var resultsInfo = $("<div class='col-md-9'>")
+        var resultsDiv = $("<div class='row flex-wrap my-3 mx-3'>");
+        var resultsInfo = $("<div class='col-md-9'>");
+        var resultsInfo2 = $("<div class='col-md-12'>");
         resultsDiv.append(resultsInfo);
+        resultsDiv.append(resultsInfo2);
         var titleP = $("<p>").text(titleResults);
         var dateP = $("<p>").text("Date & Time: " + dateResults);
         var typeP = $("<p>").text("Type: " + typeResults);
         var venueP = $("<p>").text("Venue: " + venueResults);
         var priceP = $("<p>").text("Average Cost: $" + priceResults);
         var urlP = $("<a id='link' href='" + urlResults + "'>" + urlResults + "</a>")
+        var imageP = $("<img src='../concertImage2.jpg'></img>")
         titleP.attr("class", "resultsP");
         dateP.attr("class", "resultsP");
         typeP.attr("class", "resultsP");
         venueP.attr("class", "resultsP");
         priceP.attr("class", "resultsP");
         urlP.attr("class", "resultsP");
+        imageP.attr("class", "resultsP");
         resultsDiv.prepend(titleP);
         resultsInfo.append(dateP);
         resultsInfo.append(typeP);
         resultsInfo.append(venueP);
         resultsInfo.append(priceP);
         resultsInfo.append(urlP);
+        resultsInfo2.append(imageP);
         $("#event-box").append(resultsDiv);
 
       };

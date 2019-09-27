@@ -40,7 +40,7 @@ $(document).ready(function () {
         var venueP = $("<p>").text("Venue: " + venueResults);
         var priceP = $("<p>").text("Average Cost: $" + priceResults);
         var urlP = $("<a id='link' href='" + urlResults + "'>" + urlResults + "</a>")
-        var imageP = $("<img src='../concertImage2.jpg'></img>")
+        var imageP = $("<img src='/concertImage2.jpg'></img>")
         titleP.attr("class", "resultsP");
         dateP.attr("class", "resultsP");
         typeP.attr("class", "resultsP");
@@ -104,21 +104,26 @@ $(document).ready(function () {
         console.log(websiteResults);
 
         // Create a series of divs to hold and display the results in the HTML.
-        var bResultsDiv = $("<div class='row flex-wrap bg-light my-3 mx-3'>");
-        var bResultsInfo = $("<div class='col-md-9'>")
+        var bResultsDiv = $("<div class='row flex-wrap my-3 mx-3'>");
+        var bResultsInfo = $("<div class='col-md-4'>")
+        var bResultsInfo2 = $("<div class='col-md-4'>")
         bResultsDiv.append(bResultsInfo);
+        bResultsDiv.append(bResultsInfo2);
         var nameP = $("<p>").text(nameResults);
         var addressP = $("<p>").text("Address: " + addressResults);
         var phoneP = $("<p>").text("Phone: " + phoneResults);
         var websiteP = $("<a id='link' href='" + websiteResults + "'>" + websiteResults + "</a>")
+        var imageP = $("<img src='/beerImage.jpg'></img>")
         nameP.attr("class", "resultsP");
         addressP.attr("class", "resultsP");
         phoneP.attr("class", "resultsP");
         websiteP.attr("class", "resultsP");
+        imageP.attr("class", "resultsP");
         bResultsDiv.prepend(nameP);
         bResultsInfo.append(addressP);
         bResultsInfo.append(phoneP);
         bResultsInfo.append(websiteP);
+        bResultsInfo2.append(imageP);
         $("#brewery-box").append(bResultsDiv);
 
       };

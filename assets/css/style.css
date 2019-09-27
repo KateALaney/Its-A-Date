@@ -25,4 +25,8 @@ p {
 .lead{
     font-weight: bold;
 }
-g
+
+.top-buffer {
+    margin-top: 30px;
+    margin-bottom: 0px;
+}

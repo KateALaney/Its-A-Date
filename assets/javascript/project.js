@@ -3,6 +3,8 @@ $(document).ready(function () {
   // Create an on-click function to start the AJAX call.
   $(document).on("click", "#zip-code-btn", function () {
     var queryURL = "https://api.seatgeek.com/2/events?client_id=MTQyMDg2OTJ8MTU2OTA2Njc3MC40NQ&geoip=" + zipCode + "&range=15mi";
+    $("#event-box").empty();
+
 
     // AJAX call for SeatGeek.
     $.ajax({
@@ -63,10 +65,19 @@ $(document).ready(function () {
     console.log(zipCode);
   });  
 
+  $("#brewery-btn").on("click", function (event) {
+    event.preventDefault();
+    cityInput = $("#city-brewery-input").val().trim();
+    console.log(cityInput);
+    stateInput = $("#state-brewery-input").val().trim();
+    console.log(stateInput);
+  })
+
   // Create a function to store user input data for breweries.
 
-  $(document).on("click", /*"#",*/ function () {
-    var queryURL = "https://api.openbrewerydb.org/breweries?by_city=" + zipCode + "&by_state=" + dateInput;
+  $(document).on("click", "#brewery-btn", function () {
+    var queryURL = "https://api.openbrewerydb.org/breweries?by_city=" + cityInput + "&by_state=" + stateInput;
+    $("#brewery-box").empty();
 
     // AJAX call for OpenBreweryDB.
     $.ajax({
@@ -75,13 +86,13 @@ $(document).ready(function () {
     }).then(function (response) { // Create a function to pull the responses to the AJAX call.
       console.log(response);
 
-      //for (var i = 0; i < response.events.length; i++) { // Create a for-loop to loop through response data.
-        //console.log(response.events[i]);
+      for (var i = 0; i < response.length; i++) { // Create a for-loop to loop through response data.
+        console.log(response[i]);
 
-        var nameResults =  // Create a series of variables to hold response data.
-        var addressResults = 
-        var phoneResults = 
-        var websiteResults = 
+        var nameResults = response[i].name; // Create a series of variables to hold response data.
+        var addressResults = response[i].street;
+        var phoneResults = response[i].phone;
+        var websiteResults = response[i].website_url;
         console.log(nameResults);
         console.log(addressResults);
         console.log(phoneResults);
@@ -94,21 +105,19 @@ $(document).ready(function () {
         var nameP = $("<p>").text(nameResults);
         var addressP = $("<p>").text("Address: " + addressResults);
         var phoneP = $("<p>").text("Phone: " + phoneResults);
-        var websiteP = $("<p>").text("Website: " + websiteResults);
+        var websiteP = $("<a id='link' href='" + websiteResults + "'>" + websiteResults + "</a>")
         nameP.attr("class", "resultsP");
         addressP.attr("class", "resultsP");
         phoneP.attr("class", "resultsP");
         websiteP.attr("class", "resultsP");
-        resultsDiv.prepend(nameP);
-        resultsInfo.append(addressP);
-        resultsInfo.append(phoneP);
-        resultsInfo.append(websiteP);
-        $(/*"#"*/).append(resultsDiv);
+        bResultsDiv.prepend(nameP);
+        bResultsInfo.append(addressP);
+        bResultsInfo.append(phoneP);
+        bResultsInfo.append(websiteP);
+        $("#brewery-box").append(bResultsDiv);
 
       };
 
     });
-
   });
-
 });

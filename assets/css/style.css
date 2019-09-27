@@ -1,9 +1,26 @@
 body{
-    background-image: url(../background.jpg);    
+    background-image: url(../background1.jpg);   
+    background-position: center;
+    background-size: auto;
+    background-repeat: no-repeat;
+    font-family: 'Quicksand', sans-serif;
 }
-
 p {
     font-weight: bold;
+    font-family: 'Quicksand' , sans-serif;
 }
-
-
+.jumbotron{
+    font-family: 'Pacifico', cursive;
+    text-align: center;
+    background-color: rgba(210, 211, 216,0.7);
+    margin: 20px,0px,32px,0px;
+}
+.display-4{
+    font-size: 80pt; 
+}
+.opaque{
+    color:rgba(8, 11, 69, 1.0) 
+}
+.lead{
+    font-weight: bold;
+}

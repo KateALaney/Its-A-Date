@@ -4,6 +4,7 @@ body{
     background-size: auto;
     background-repeat: no-repeat;
     font-family: 'Quicksand', sans-serif;
+    background-attachment: fixed;
 }
 p {
     font-weight: bold;
@@ -24,3 +25,4 @@ p {
 .lead{
     font-weight: bold;
 }
+g

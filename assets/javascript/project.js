@@ -113,7 +113,7 @@ $(document).ready(function () {
         var addressP = $("<p>").text("Address: " + addressResults);
         var phoneP = $("<p>").text("Phone: " + phoneResults);
         var websiteP = $("<a id='link' href='" + websiteResults + "'>" + websiteResults + "</a>")
-        var imageP = $("<img src='/beerImage.jpg'></img>")
+        var imageP = $("<img src='../images/beerImage.jpg'></img>")
         nameP.attr("class", "resultsP");
         addressP.attr("class", "resultsP");
         phoneP.attr("class", "resultsP");

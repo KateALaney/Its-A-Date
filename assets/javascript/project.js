@@ -30,8 +30,8 @@ $(document).ready(function () {
 
         // Create a series of divs to hold and display the results in the HTML.
         var resultsDiv = $("<div class='row flex-wrap my-3 mx-3'>");
-        var resultsInfo = $("<div class='col-md-9'>");
-        var resultsInfo2 = $("<div class='col-md-12'>");
+        var resultsInfo = $("<div class='col-md-4'>");
+        var resultsInfo2 = $("<div class='col-md-4'>");
         resultsDiv.append(resultsInfo);
         resultsDiv.append(resultsInfo2);
         var titleP = $("<p>").text(titleResults);
@@ -40,8 +40,8 @@ $(document).ready(function () {
         var venueP = $("<p>").text("Venue: " + venueResults);
         var priceP = $("<p>").text("Average Cost: $" + priceResults);
         var urlP = $("<a id='link' href='" + urlResults + "'>" + urlResults + "</a>")
-        var imageP = $("<img src='/concertImage2.jpg'></img>")
-        titleP.attr("class", "resultsP");
+        var imageP = $("<img src='assets/images/concertImage2.jpg'></img>")
+        titleP.attr("class", "title");
         dateP.attr("class", "resultsP");
         typeP.attr("class", "resultsP");
         venueP.attr("class", "resultsP");
@@ -54,7 +54,7 @@ $(document).ready(function () {
         resultsInfo.append(venueP);
         resultsInfo.append(priceP);
         resultsInfo.append(urlP);
-        resultsInfo2.append(imageP);
+        resultsDiv.append(imageP);
         $("#event-box").append(resultsDiv);
 
       };
@@ -113,8 +113,8 @@ $(document).ready(function () {
         var addressP = $("<p>").text("Address: " + addressResults);
         var phoneP = $("<p>").text("Phone: " + phoneResults);
         var websiteP = $("<a id='link' href='" + websiteResults + "'>" + websiteResults + "</a>")
-        var imageP = $("<img src='../images/beerImage.jpg'></img>")
-        nameP.attr("class", "resultsP");
+        var imageP = $("<img src='assets/images/beerImage.jpg'></img>")
+        nameP.attr("class", "title");
         addressP.attr("class", "resultsP");
         phoneP.attr("class", "resultsP");
         websiteP.attr("class", "resultsP");

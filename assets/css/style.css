@@ -1,5 +1,5 @@
 body{
-    background-image: url(../background1.jpg);   
+    background-image: url(../images/background1.jpg);   
     background-position: center;
     background-size: auto;
     background-repeat: no-repeat;
@@ -48,4 +48,8 @@ p {
 
 .card-body {
     background-color: #FCB82B;
+}
+
+.title {
+    font-size: 24px;
 }

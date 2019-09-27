@@ -40,21 +40,21 @@ $(document).ready(function () {
         var venueP = $("<p>").text("Venue: " + venueResults);
         var priceP = $("<p>").text("Average Cost: $" + priceResults);
         var urlP = $("<a id='link' href='" + urlResults + "'>" + urlResults + "</a>")
-        var imageP = $("<img src='assets/images/concertImage2.jpg'></img>")
+
         titleP.attr("class", "title");
         dateP.attr("class", "resultsP");
         typeP.attr("class", "resultsP");
         venueP.attr("class", "resultsP");
         priceP.attr("class", "resultsP");
         urlP.attr("class", "resultsP");
-        imageP.attr("class", "resultsP");
+
         resultsDiv.prepend(titleP);
         resultsInfo.append(dateP);
         resultsInfo.append(typeP);
         resultsInfo.append(venueP);
         resultsInfo.append(priceP);
         resultsInfo.append(urlP);
-        resultsDiv.append(imageP);
+
         $("#event-box").append(resultsDiv);
 
       };

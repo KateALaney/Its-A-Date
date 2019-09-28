@@ -3,7 +3,8 @@ $(document).ready(function () {
   // Create an on-click function to start the AJAX call.
   $(document).on("click", "#zip-code-btn", function () {
     var queryURL = "https://api.seatgeek.com/2/events?client_id=MTQyMDg2OTJ8MTU2OTA2Njc3MC40NQ&geoip=" + zipCode + "&range=15mi";
-    //      var queryURL = "https://api.openbrewerydb.org/breweries?by_city=" + zipCode + "&by_state=" + dateInput;
+    $("#event-box").empty();
+
 
     // AJAX call for SeatGeek.
     $.ajax({
@@ -28,27 +29,32 @@ $(document).ready(function () {
         console.log(urlResults);
 
         // Create a series of divs to hold and display the results in the HTML.
-        var resultsDiv = $("<div class='row flex-wrap bg-light my-3 mx-3'>");
-        var resultsInfo = $("<div class='col-md-9'>")
+        var resultsDiv = $("<div class='row flex-wrap my-3 mx-3'>");
+        var resultsInfo = $("<div class='col-md-4'>");
+        var resultsInfo2 = $("<div class='col-md-4'>");
         resultsDiv.append(resultsInfo);
+        resultsDiv.append(resultsInfo2);
         var titleP = $("<p>").text(titleResults);
         var dateP = $("<p>").text("Date & Time: " + dateResults);
         var typeP = $("<p>").text("Type: " + typeResults);
         var venueP = $("<p>").text("Venue: " + venueResults);
         var priceP = $("<p>").text("Average Cost: $" + priceResults);
-        var urlP = $("<a id='link' href>").text(urlResults);
-        titleP.attr("class", "resultsP");
+        var urlP = $("<a id='link' href='" + urlResults + "'>" + urlResults + "</a>")
+
+        titleP.attr("class", "title");
         dateP.attr("class", "resultsP");
         typeP.attr("class", "resultsP");
         venueP.attr("class", "resultsP");
         priceP.attr("class", "resultsP");
         urlP.attr("class", "resultsP");
+
         resultsDiv.prepend(titleP);
         resultsInfo.append(dateP);
         resultsInfo.append(typeP);
         resultsInfo.append(venueP);
         resultsInfo.append(priceP);
         resultsInfo.append(urlP);
+
         $("#event-box").append(resultsDiv);
 
       };
@@ -57,15 +63,26 @@ $(document).ready(function () {
 
   });
 
-  // Create a function to store user input data.
+  // Create a function to store user input data for.
   $("#zip-code-btn").on("click", function (event) {
     event.preventDefault();
     zipCode = $("#zip-code-input").val().trim();
     console.log(zipCode);
   });  
 
-  $(document).on("click", /*"#",*/ function () {
-    var queryURL = "https://api.openbrewerydb.org/breweries?by_city=" + zipCode + "&by_state=" + dateInput;
+  $("#brewery-btn").on("click", function (event) {
+    event.preventDefault();
+    cityInput = $("#city-brewery-input").val().trim();
+    console.log(cityInput);
+    stateInput = $("#state-brewery-input").val().trim();
+    console.log(stateInput);
+  })
+
+  // Create a function to store user input data for breweries.
+
+  $(document).on("click", "#brewery-btn", function () {
+    var queryURL = "https://api.openbrewerydb.org/breweries?by_city=" + cityInput + "&by_state=" + stateInput;
+    $("#brewery-box").empty();
 
     // AJAX call for OpenBreweryDB.
     $.ajax({
@@ -74,40 +91,43 @@ $(document).ready(function () {
     }).then(function (response) { // Create a function to pull the responses to the AJAX call.
       console.log(response);
 
-      //for (var i = 0; i < response.events.length; i++) { // Create a for-loop to loop through response data.
-        //console.log(response.events[i]);
+      for (var i = 0; i < response.length; i++) { // Create a for-loop to loop through response data.
+        console.log(response[i]);
 
-        var nameResults =  // Create a series of variables to hold response data.
-        var addressResults = 
-        var phoneResults = 
-        var websiteResults = 
+        var nameResults = response[i].name; // Create a series of variables to hold response data.
+        var addressResults = response[i].street;
+        var phoneResults = response[i].phone;
+        var websiteResults = response[i].website_url;
         console.log(nameResults);
         console.log(addressResults);
         console.log(phoneResults);
         console.log(websiteResults);
 
         // Create a series of divs to hold and display the results in the HTML.
-        var bResultsDiv = $("<div class='row flex-wrap bg-light my-3 mx-3'>");
-        var bResultsInfo = $("<div class='col-md-9'>")
+        var bResultsDiv = $("<div class='row flex-wrap my-3 mx-3'>");
+        var bResultsInfo = $("<div class='col-md-4'>")
+        var bResultsInfo2 = $("<div class='col-md-4'>")
         bResultsDiv.append(bResultsInfo);
+        bResultsDiv.append(bResultsInfo2);
         var nameP = $("<p>").text(nameResults);
         var addressP = $("<p>").text("Address: " + addressResults);
         var phoneP = $("<p>").text("Phone: " + phoneResults);
-        var websiteP = $("<p>").text("Website: " + websiteResults);
-        nameP.attr("class", "resultsP");
+        var websiteP = $("<a id='link' href='" + websiteResults + "'>" + websiteResults + "</a>")
+        var imageP = $("<img src='assets/images/beerImage.jpg'></img>")
+        nameP.attr("class", "title");
         addressP.attr("class", "resultsP");
         phoneP.attr("class", "resultsP");
         websiteP.attr("class", "resultsP");
-        resultsDiv.prepend(nameP);
-        resultsInfo.append(addressP);
-        resultsInfo.append(phoneP);
-        resultsInfo.append(websiteP);
-        $(/*"#"*/).append(resultsDiv);
+        imageP.attr("class", "resultsP");
+        bResultsDiv.prepend(nameP);
+        bResultsInfo.append(addressP);
+        bResultsInfo.append(phoneP);
+        bResultsInfo.append(websiteP);
+        bResultsInfo2.append(imageP);
+        $("#brewery-box").append(bResultsDiv);
 
       };
 
     });
-
   });
-
 });

@@ -1,10 +1,11 @@
 body{
-    background-image: url(../background1.jpg);   
+    background-image: url(../images/background1.jpg);   
     background-position: center;
     background-size: auto;
     background-repeat: no-repeat;
     font-family: 'Quicksand', sans-serif;
     background-attachment: fixed;
+    background-color: black;
 }
 p {
     font-weight: bold;
@@ -25,4 +26,30 @@ p {
 .lead{
     font-weight: bold;
 }
-g
+
+.top-buffer {
+    margin-top: 30px;
+    margin-bottom: 0px;
+}
+
+.card-header {
+    background-color: black;
+    color: #FCB82B;
+}
+
+.card {
+    border: 1px solid black;
+}
+
+.flex-wrap {
+    background-color: black;
+    color: white;
+}
+
+.card-body {
+    background-color: #FCB82B;
+}
+
+.title {
+    font-size: 24px;
+}

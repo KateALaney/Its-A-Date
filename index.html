@@ -14,15 +14,16 @@
         <div class="jumbotron">
             <div class="container opaque">
                 <h1 class="display-4">It's A Date!</h1>
-                <p class="lead">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur explicabo possimus officia. Expedita quibusdam minima dicta officiis doloremque possimus iste, at natus doloribus, molestias sunt repudiandae maiores eius! Facilis, beatae!</p>
+                <p class="lead">Tag line.</p>
             </div>
         </div>
     </div>
     <div class="container section">
-        <div class="row">
+        <div class="row top-buffer">
             <div class="col-md-6">
                 <div class="input-group mb-3">
-                    <input type="text" class="form-control" id="zip-code-input" placeholder="Event Zip Code"
+                    <input type="text" class="form-control" id="zip-code-input" onfocus="this.value=''"
+                    placeholder="Event Zip Code"
                         aria-label="Zip Code" aria-describedby="button-addon2">
                     <div class="input-group-append">
                         <button class="btn btn-outline-secondary" type="button" id="zip-code-btn">Submit</button>
@@ -33,8 +34,32 @@
         <div class="row section">
             <div class="col-md-12">
                 <div class="card">
+                    <div class="card-header"><h3>Events</h3></div>
                     <div class="card-body" id="event-box">
-                        <h3>Events</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row top-buffer">
+            <div class="col-md-6">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" id="city-brewery-input" onfocus="this.value=''"
+                    placeholder="Enter City"
+                        aria-label="City" aria-describedby="button-addon2">
+                    <input type="text" class="form-control" id="state-brewery-input"  onfocus="this.value=''"
+                    placeholder="Enter State"
+                        aria-label="State" aria-describedby="button-addon2">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" type="button" id="brewery-btn">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header"><h3>Breweries</h3></div>
+                    <div class="card-body" id="brewery-box">
                     </div>
                 </div>
             </div>

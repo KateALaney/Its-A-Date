@@ -53,3 +53,8 @@ p {
 .title {
     font-size: 24px;
 }
+
+#link {
+    font-style: italic;
+    color: #FCB82B;
+}

@@ -17,12 +17,14 @@ $(document).ready(function () {
         console.log(response.events[i]);
 
         var titleResults = response.events[i].title; // Create a series of variables to hold response data.
-        var dateResults = response.events[i].datetime_local;
+        
+        //moment().format('MMMM Do YYYY, h:mm:ss a');
+        var date = moment(response.events[i].datetime_local).format('dddd, MM/DD/YYYY h:mm a');
         var typeResults = response.events[i].type;
         var venueResults = response.events[i].venue.name;
         var priceResults = response.events[i].stats.average_price;
         var urlResults = response.events[i].url;
-        console.log(dateResults);
+        console.log(date);
         console.log(typeResults);
         console.log(venueResults);
         console.log(priceResults);
@@ -30,16 +32,17 @@ $(document).ready(function () {
 
         // Create a series of divs to hold and display the results in the HTML.
         var resultsDiv = $("<div class='row flex-wrap my-3 mx-3'>");
-        var resultsInfo = $("<div class='col-md-4'>");
-        var resultsInfo2 = $("<div class='col-md-4'>");
+        var resultsInfo = $("<div class='col-md-12'>");
+        var resultsInfo2 = $("<div class='col-md-12'>");
         resultsDiv.append(resultsInfo);
-        resultsDiv.append(resultsInfo2);
+        resultsDiv.prepend(resultsInfo2);
         var titleP = $("<p>").text(titleResults);
-        var dateP = $("<p>").text("Date & Time: " + dateResults);
+        var dateP = $("<p>").text("Date & Time: " + date);
         var typeP = $("<p>").text("Type: " + typeResults);
         var venueP = $("<p>").text("Venue: " + venueResults);
         var priceP = $("<p>").text("Average Cost: $" + priceResults);
         var urlP = $("<a id='link' href='" + urlResults + "'>" + urlResults + "</a>")
+        var imageP = $("<img src='assets/images/concertImage2.jpg'></img>")
 
         titleP.attr("class", "title");
         dateP.attr("class", "resultsP");
@@ -54,6 +57,7 @@ $(document).ready(function () {
         resultsInfo.append(venueP);
         resultsInfo.append(priceP);
         resultsInfo.append(urlP);
+        resultsInfo2.append(imageP);
 
         $("#event-box").append(resultsDiv);
 
@@ -77,6 +81,13 @@ $(document).ready(function () {
     stateInput = $("#state-brewery-input").val().trim();
     console.log(stateInput);
   })
+
+  new fullpage('#fullPage',{
+    autoScrolling: true,
+    navigation: true,
+    navigationTooltips: ["Home","Events", "Breweries", "Restaurants"],
+    showActiveTooltip: true,
+})
 
   // Create a function to store user input data for breweries.
 
@@ -129,5 +140,7 @@ $(document).ready(function () {
       };
 
     });
-  });
+  
+  }); 
+ 
 });

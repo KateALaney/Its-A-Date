@@ -32,34 +32,24 @@ p {
     margin-bottom: 0px;
 }
 
-.card{
-    background-color:rgba(64, 64, 70, 0.884);
+.card-header {
+    background-color: black;
+    color: #FCB82B;
+}
+
+.card {
+    border: 1px solid black;
+}
+
+.flex-wrap {
+    background-color: black;
     color: white;
 }
-h3{
-    font-weight: 800;
-    font-size: 2.0rem;
-    letter-spacing: 0.125em; 
-    
+
+.card-body {
+    background-color: #FCB82B;
 }
 
-a{
-    color:white;
-}
-
-title{
-    font-weight: bold;
-}
-.dex{
-    font-family: 'Montserrat', sans-serif;
-    color: rgba(8, 11, 69, 1.0);
-    font-weight: 700;
-    font-size: 3.0rem;
-    width: 1000px;
-    background: rgba(223, 220, 213, 0.336);
-    padding-top: 20px;
-    padding-bottom: 20px;
-    padding-left:20px;
-    border-radius: 15px 50px;
-    margin-bottom: 20px;
+.title {
+    font-size: 24px;
 }

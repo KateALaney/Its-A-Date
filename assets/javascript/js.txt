@@ -51,7 +51,7 @@ $(document).ready(function () {
         typeP.attr("class", "resultsP");
         venueP.attr("class", "resultsP");
         priceP.attr("class", "resultsP");
-        urlP.attr("class", "urlP");
+        urlP.attr("class", "resultsP");
         imageP.attr("class", "imageP")
 
         resultsInfo.prepend(titleP);
@@ -86,34 +86,11 @@ $(document).ready(function () {
   })
 
   new fullpage('#fullPage',{
-    autoScrolling: false,
+    autoScrolling: true,
     navigation: true,
-    navigationTooltips: ['Home','Events','Breweries'],
-    showActiveTooltips: true,
-  })
-
-// Create a random function to call images for brewery images.
-
-  var breweryImgs = [
-    "assets/images/brewery-images/brewery1.jpeg",
-    "assets/images/brewery-images/brewery2.jpeg",
-    "assets/images/brewery-images/brewery3.jpeg",
-    "assets/images/brewery-images/brewery4.jpeg",
-    "assets/images/brewery-images/brewery5.jpeg",
-    "assets/images/brewery-images/brewery6.jpeg",
-    "assets/images/brewery-images/brewery7.jpeg",
-    "assets/images/brewery-images/brewery8.jpeg",
-    "assets/images/brewery-images/brewery9.jpeg",
-    "assets/imagesbrewery-images/brewery10.jpeg"];
-
-  function random_item(breweryImgs){
-    return breweryImgs[Math.floor(Math.random() * 9 + 1)];
-    }
-    
-  var imgResults = random_item(breweryImgs);
-  for (var i = 0; 1 < random_item.length; i++)
-
-  console.log(random_item(breweryImgs));
+    navigationTooltips: ["Home","Events", "Breweries", "Restaurants"],
+    showActiveTooltip: true,
+})
 
   // Create a function to store user input data for breweries.
 
@@ -139,10 +116,13 @@ $(document).ready(function () {
         console.log(addressResults);
         console.log(phoneResults);
         console.log(websiteResults);
+
+        // Create an array and function to rotate images in the brewery image div.
+        
         
         // Create a series of divs to hold and display the results in the HTML.
         var bResultsDiv = $("<div class='row flex-wrap my-3 mx-3'>");
-        var bResultsInfo = $("<div class='col-md-8'>")
+        var bResultsInfo = $("<div class='col-md-4'>")
         var bResultsInfo2 = $("<div class='col-md-4'>")
         bResultsDiv.append(bResultsInfo);
         bResultsDiv.append(bResultsInfo2);
@@ -150,13 +130,13 @@ $(document).ready(function () {
         var addressP = $("<p>").text("Address: " + addressResults);
         var phoneP = $("<p>").text("Phone: " + phoneResults);
         var websiteP = $("<a id='link' href='" + websiteResults + "'>" + websiteResults + "</a>")
-        var imageP = $("<img src=" + imgResults + "></img>");
+        var imageP = $("<img src='assets/images/beerImage.jpg'></img>")
         nameP.attr("class", "title");
         addressP.attr("class", "resultsP");
         phoneP.attr("class", "resultsP");
-        websiteP.attr("class", "urlP");
-        imageP.attr("class", "imageP");
-        bResultsInfo.append(nameP);
+        websiteP.attr("class", "resultsP");
+        imageP.attr("class", "resultsP");
+        bResultsDiv.prepend(nameP);
         bResultsInfo.append(addressP);
         bResultsInfo.append(phoneP);
         bResultsInfo.append(websiteP);

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>It's A Date!</title>
+</head>
+
+<body>
+    <div id="fullPage">
+        <div class="container section">
+            <div class="jumbotron">
+                <div class="container opaque">
+                    <h1 class="display-4">It's A Date!</h1>
+                    <p class="lead">Tag line.</p>
+                </div>
+            </div>
+        </div>
+        <div class="container section">
+            <div class="row top-buffer">
+                <div class="col-md-6">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" id="zip-code-input" onfocus="this.value=''"
+                            placeholder="Event Zip Code" aria-label="Zip Code" aria-describedby="button-addon2">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary" type="button" id="zip-code-btn">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Events</h3>
+                        </div>
+                        <div class="card-body" id="event-box">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container section">
+            <div class=" row top-buffer">
+                <div class="col-md-6">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" id="city-brewery-input" onfocus="this.value=''"
+                            placeholder="Enter City" aria-label="City" aria-describedby="button-addon2">
+                        <input type="text" class="form-control" id="state-brewery-input" onfocus="this.value=''"
+                            placeholder="Enter State" aria-label="State" aria-describedby="button-addon2">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary" type="button" id="brewery-btn">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Breweries</h3>
+                        </div>
+                        <div class="card-body" id="brewery-box">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <!--Link to moment.js-->
+   <script src="assets/moment/moment.min.js"></script>
+   <!--End Link to moment.js-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.7/fullpage.extensions.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="assets/javascript/project.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.7/fullpage.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</body>
+
+</html>
